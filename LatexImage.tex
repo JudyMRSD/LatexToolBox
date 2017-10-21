@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subfloat}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\newtheorem{theorem}{Theorem}
+
+\title{FFT writeup}
+\author{Abhijat Biswas, Sam Clarke, Travers Rhodes, Jin Zhu}
+\date{October 2017}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Example calculation}
+
+1.Flow graph (butterfly diagram) of the complete decomposition of an four-point DFT to show terms that can be reused.
+2.Red lines: even and odd terms that make up H(0)
+3. Orange lines: Even terms (h(0) and h(2)) that are used to calculate term A can be looked as ``even of the even'' points and ``odd of the even'' points. Similaryly, the odd terms (h(1) and h(3)) are used for calculating term C, and h(1) is the ``even of the odd'' point, and h(2) is the ``odd of the odd'' point.
+
+
+%Images 
+\begin{figure}[H]
+  \makebox[\textwidth]{\includegraphics[scale=0.5]{Butterfly.jpg}}
+  \caption{Four point butterfly diagram}
+  \label{fig:butterfly_all}
+\end{figure}
+
+\begin{figure}[H]
+  \makebox[\textwidth]{\includegraphics[scale=0.5]{ButterflyH0.jpg}}
+  \caption{Terms used for calculating $H_0$}
+  \label{fig:butterfly_h0}
+\end{figure}
+
+\begin{figure}[H]
+  \makebox[\textwidth]{\includegraphics[scale=0.5]{Butterfly_ABCD.jpg}}
+  \caption{Terms used for calculating A and C}
+  \label{fig:butterfly_abcdTerms}
+\end{figure}
+
+
+%Images in the same line
+\begin{figure}[H]
+  \makebox[\textwidth]{\includegraphics[width=0.7\textwidth]{Butterfly.jpg}
+   \hfill
+   \includegraphics[width=0.7\textwidth]{Butterfly.jpg}}
+  \caption{plot of sinh(x) over interval [-2,2].}
+  \label{fig:question1b}
+\end{figure}
+
+
+
+
+\end{document}
